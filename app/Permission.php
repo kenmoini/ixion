@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Permission extends Model 
 {
+    
+    use SoftDeletes;
 
     protected $table = 'permissions';
     public $timestamps = true;
-
-    use SoftDeletes;
 
     protected $dates = ['deleted_at'];
     protected $fillable = array('slug', 'created_at', 'updated_at');

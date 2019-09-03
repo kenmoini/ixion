@@ -17,6 +17,7 @@ class CreateSettingsTable extends Migration {
 			$table->text('details')->nullable();
 			$table->string('type', 191);
 			$table->integer('order')->default('1');
+			$table->text('parameters')->nullable();
 		});
 	}
 
