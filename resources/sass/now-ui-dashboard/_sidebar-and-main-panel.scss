@@ -88,9 +88,11 @@
                 line-height: $line-height-nav-link;
             }
 
+            /*
             &:first-child > a{
-                /* margin: 0 15px; */
+                margin: 0 15px; 
             }
+            */
 
             &:hover:not(.active) > a,
             &:focus:not(.active) > a{
@@ -177,17 +179,17 @@
             @include transform-translate-x(0px);
         }
 
+        /*
         &:after{
-          /*
             content: '';
             position: absolute;
             bottom: 0;
             right: 15px;
             height: 1px;
             width: calc(100% - 30px);
-            background-color: $opacity-5;
-          */
+            background-color: $opacity-5; 
         }
+        */
 
         p{
             float: left;

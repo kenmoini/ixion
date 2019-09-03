@@ -13,6 +13,7 @@ class CreateMenusTable extends Migration {
 			$table->softDeletes();
 			$table->string('name', 191);
 			$table->string('slug', 191)->unique();
+			$table->string('menu_position', 191)->default('panel_sidebar');
 		});
 	}
 
