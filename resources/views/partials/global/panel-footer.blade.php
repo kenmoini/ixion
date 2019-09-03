@@ -1,6 +1,8 @@
 <footer class="footer">
         <div class="container-fluid">
           <nav>
+
+            {!! $panel_footer_menu !!}
             <!--
             <ul>
               <li>
