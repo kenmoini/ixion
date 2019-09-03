@@ -38,8 +38,12 @@
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
+
+        {!! $panel_sidebar_menu !!}
+
         <ul class="nav">
-          <li class="active ">
+          
+        <li class="active ">
             <a href="./dashboard.html">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>

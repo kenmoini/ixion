@@ -11,6 +11,9 @@
 |
 */
 
+
+Route::get('initial-setup', 'OOBESetupController@showInitialSetupWizard')->name('system.get.oobe-setup');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,7 +21,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 Route::prefix('panel')->group(function () {
     Route::get('dashboard', 'DashboardController@index')->name('panel.get.dashboard');

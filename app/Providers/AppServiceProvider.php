@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+
+        // Pass along the side bar menu
+        View::share('panel_sidebar_menu', 'value');
+
+        // Pass along the footer menu
+        View::share('panel_footer_menu', 'value');
     }
 }

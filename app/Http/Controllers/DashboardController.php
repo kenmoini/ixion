@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+
+    public static function show_menu($menu_position) {
+        
+    }
+
     /**
      * Display a listing of the resource.
      *
