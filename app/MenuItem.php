@@ -14,7 +14,7 @@ class MenuItem extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('title', 'url', 'target', 'icon_class', 'extra_class', 'route', 'parameters');
+    protected $fillable = array('title', 'url', 'target', 'icon_class', 'extra_class', 'route', 'parameters', 'created_at', 'updated_at');
 
     public function menus()
     {

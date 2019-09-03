@@ -17,7 +17,7 @@ class Realm extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('name', 'slug', 'description', 'domain', 'authentication_method');
+    protected $fillable = array('name', 'slug', 'description', 'domain', 'authentication_method', 'created_at', 'updated_at');
 
     /**
      * Get the options for generating the slug.

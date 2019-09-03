@@ -18,6 +18,7 @@ class CreateSettingsTable extends Migration {
 			$table->string('type', 191);
 			$table->integer('order')->default('1');
 			$table->text('parameters')->nullable();
+			$table->string('visibility', 191);
 		});
 	}
 

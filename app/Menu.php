@@ -17,7 +17,7 @@ class Menu extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('name', 'slug');
+    protected $fillable = array('name', 'slug', 'menu_position', 'created_at', 'updated_at');
 
     /**
      * Get the options for generating the slug.

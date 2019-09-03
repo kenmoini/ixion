@@ -17,7 +17,7 @@ class Role extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('title', 'slug', 'description');
+    protected $fillable = array('title', 'slug', 'description', 'created_at', 'updated_at');
 
     /**
      * Get the options for generating the slug.

@@ -9,6 +9,6 @@ class MenuMenuItem extends Model
 
     protected $table = 'menu_menu_item';
     public $timestamps = true;
-    protected $fillable = array('parent_id', 'order');
+    protected $fillable = array('menu_id', 'menu_item_id', 'parent_id', 'order', 'created_at', 'updated_at');
 
 }

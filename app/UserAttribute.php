@@ -14,7 +14,7 @@ class UserAttribute extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('key', 'display_name', 'value', 'description');
+    protected $fillable = array('user_id', 'key', 'display_name', 'value', 'description', 'created_at', 'updated_at');
 
     public function user()
     {

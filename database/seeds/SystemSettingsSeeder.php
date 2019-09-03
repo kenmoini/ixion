@@ -46,6 +46,50 @@ class SystemSettingsSeeder extends Seeder
                 'parameters' => '',
                 'order' => 2
             ],
+            [
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'key' => 'default.realm',
+                'value' => '',
+                'display_name' => 'System Default Realm',
+                'details' => 'Default Realm associated with the core system.',
+                'type' => 'function-call',
+                'parameters' => json_encode(['presentation_format' => 'dropdown-select', 'function_call' => 'App\Http\Controllers\SystemHelpersController@generateDropdownSelectOfAvailableRealms']),
+                'order' => 3
+            ],
+            [
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'key' => 'default.role',
+                'value' => '',
+                'display_name' => 'System Default Role',
+                'details' => 'Default Role associated with new users.',
+                'type' => 'function-call',
+                'parameters' => json_encode(['presentation_format' => 'dropdown-select', 'function_call' => 'App\Http\Controllers\SystemHelpersController@generateDropdownSelectOfAvailableRoles']),
+                'order' => 4
+            ],
+            [
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'key' => 'registration_type',
+                'value' => '1',
+                'display_name' => 'Registration',
+                'details' => 'Registration options available to this system for new users.',
+                'type' => 'dropdown-select',
+                'parameters' => json_encode(['options' => ['0' => 'Registration disabled', '1' => 'Open registration publicly', '2' => 'Invite/Admin Creation Only', '3' => 'Domain Whitelist']]),
+                'order' => 5
+            ],
+            [
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'key' => 'registration_type.domain_whitelist',
+                'value' => '',
+                'display_name' => 'Registration - Domain Whitelist',
+                'details' => 'If registration is enabled for whitelisted domains, you may enter one domain per line to enable a domain.  Wildcards not allowed.',
+                'type' => 'textarea',
+                'parameters' => '',
+                'order' => 6
+            ],
         ];
     }
 }
