@@ -14,6 +14,6 @@ class SystemSetting extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('key', 'display_name', 'value', 'details', 'type', 'order', 'parameters', 'visibility', 'created_at', 'updated_at');
+    protected $fillable = array('key', 'display_name', 'default_value', 'value', 'details', 'type', 'order', 'parameters', 'visibility', 'created_at', 'updated_at');
 
 }

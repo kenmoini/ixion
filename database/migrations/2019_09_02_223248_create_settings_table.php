@@ -13,6 +13,7 @@ class CreateSettingsTable extends Migration {
 			$table->softDeletes();
 			$table->string('key', 191)->unique();
 			$table->string('display_name', 191);
+			$table->text('default_value')->nullable();
 			$table->text('value')->nullable();
 			$table->text('details')->nullable();
 			$table->string('type', 191);
