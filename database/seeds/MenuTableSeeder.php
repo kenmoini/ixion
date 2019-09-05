@@ -69,14 +69,8 @@ class MenuTableSeeder extends Seeder
 
     }
 
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        $menus = [
+    public function fetchDefaultSeededMenus() {
+        return $menus = [
             [
                 'name' => 'Default Panel Sidebar',
                 'menu_position' => 'panel_sidebar',
@@ -199,8 +193,16 @@ class MenuTableSeeder extends Seeder
                 ]
             ],
         ];
+    }
 
-        foreach ($menus as $menu) {
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        foreach ($this->fetchDefaultSeededMenus() as $menu) {
             $menuID = DB::table('menus')->insertGetId([
                 'name' => $menu['name'],
                 'slug' => Str::slug($menu['name']),

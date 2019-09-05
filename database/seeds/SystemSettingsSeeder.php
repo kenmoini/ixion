@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\DB;
 class SystemSettingsSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Return the default seeded settings.
      *
-     * @return void
+     * @return array
      */
-    public function run()
+    public function fetchDefaultSeededSettings()
     {
-        $settings = [
+        return $default_settings = [
             [
                 'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
                 'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
@@ -118,9 +118,18 @@ class SystemSettingsSeeder extends Seeder
                 'parameters' => '',
                 'order' => 9001,
                 'visibility' => 'hidden'
-            ],
+            ]
         ];
+    }
 
-        DB::table('settings')->insert($settings);
+
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('settings')->insert($this->fetchDefaultSeededSettings());
     }
 }

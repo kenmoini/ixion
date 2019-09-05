@@ -19,8 +19,14 @@ class CheckOOBESetup
     public function handle($request, Closure $next)
     {
         //Ensure it's not in the excluded list
-        if (!in_array($request->path(), $this->except)) {
-            
+        $passed = 0;
+        foreach ($this->except as $exception) {
+            if (strpos($request->path(), $exception) === 0) {
+                $passed = 1;
+            }
+        }
+        //if (!in_array($request->path(), $this->except)) {
+        if (!$passed) {
             //Check to see if the Initial Out of Box Experience Setup has been run...
             $oobeCheck = new OOBESetupController;
 
@@ -36,6 +42,9 @@ class CheckOOBESetup
      * @var array
      */
     protected $except = [
-        'initial-setup'
+        'initial-setup',
+        'css',
+        'js',
+        'vendor',
     ];
 }
